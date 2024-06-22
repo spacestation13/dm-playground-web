@@ -130,7 +130,10 @@ const emulator = new V86({
     url: 'https://raw.githubusercontent.com/copy/v86/master/bios/vgabios.bin',
   },
   cdrom: null,
-  hda: null,
+  hda: {
+    url: parameters.get(vmRemoteUrlSearchParameter) + 'rootfs.squashfs',
+    async: false,
+  },
   hdb: null,
   fda: null,
   fdb: null,
@@ -139,10 +142,7 @@ const emulator = new V86({
   bzimage: {
     url: parameters.get(vmRemoteUrlSearchParameter) + 'bzImage',
   },
-  initrd: {
-    url: parameters.get(vmRemoteUrlSearchParameter) + 'rootfs.cpio.lz4',
-    async: true,
-  },
+  initrd: null,
   //9p filesystem, { basefs: string, baseurl: string } or {}
   filesystem: {},
   //Loads bzimage and initrd from 9p filesystem

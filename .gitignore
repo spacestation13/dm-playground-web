@@ -44,3 +44,4 @@ Thumbs.db
 public/lib/rootfs.iso
 public/lib/*.cpio*
 public/lib/bzImage
+public/lib/rootfs.squashfs
